@@ -36,6 +36,8 @@ def clean_headers(infile, outfile=None):
 	for line in open(infile, 'r').readlines():
 		line = line.strip()
 		if line.startswith('>'):
+			#line = line.split()
+			#org_name = ' '.join([line[1], line[2]])
 			org_name = re.findall(r"\[(.*?)\]", line)[-1]
 			fout.write('>' + org_name + '\n')
 		else:
